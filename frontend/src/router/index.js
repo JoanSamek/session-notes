@@ -27,4 +27,5 @@ const defaultTitle = "Lore Hoard";
 router.afterEach((to) => {
   document.title = defaultTitle + (to.meta.title || "");
 });
+
 export default router;
