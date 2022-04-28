@@ -6,6 +6,7 @@ const routes = [
     path: "/",
     name: "main",
     component: MainView,
+    meta: { layout: null },
   },
 ];
 
