@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  export default {
-    name: "MainView",
-  };
+export default {
+  name: "MainView",
+};
 </script>

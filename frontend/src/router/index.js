@@ -18,10 +18,10 @@ const router = createRouter({
   },
 });
 
-router.beforeEach((to, from, next) => {
-  //check auth, etc.
-  if (true) next();
-});
+// router.beforeEach((to, from, next) => {
+//   //check auth, etc.
+//   if (true) next();
+// });
 
 const defaultTitle = "Lore Hoard";
 router.afterEach((to) => {
