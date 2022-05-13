@@ -7,4 +7,10 @@ import { loadFonts } from "./plugins/webfontloader";
 
 loadFonts();
 
-createApp(App).use(router).use(store).use(vuetify).mount("#app");
+import DefLayout from "./views/layouts/DefLayout";
+
+const app = createApp(App).use(router).use(store).use(vuetify);
+
+app.component("DefLayout", DefLayout);
+
+app.mount("#app");
