@@ -1,8 +1,8 @@
 <template lang="">
-  <v-navigation-drawer v-model="drawer">
+  <v-navigation-drawer v-model="drawer" theme="dark">
     <v-list>
       <v-list-item
-        :prepend-avatar="require('../../assets/logo.jpg')"
+        :prepend-avatar="require('../../assets/logoWhite.png')"
         title="Lore Hoard"
         subtitle="session notes"
         @click="$router.push('/')"
@@ -19,7 +19,6 @@
         :title="item.title"
         :value="item.title"
         @click="goTo(item.link)"
-        class="text-grey-darken-2"
         :class="$route.path === item.link ? 'v-list-item--active' : ''"
       >
       </v-list-item>
@@ -37,13 +36,17 @@
     <v-icon>mdi-format-list-bulleted-square</v-icon>
   </v-btn>
 
-  <v-list class="titleBanner" v-if="$vuetify.display.mobile && !drawer">
-    <v-list-item title="Lore Hoard" subtitle="session notes">
-      <v-list-item-avatar end>
-        <v-img :src="require('../../assets/logo.jpg')" />
-      </v-list-item-avatar>
-    </v-list-item>
-  </v-list>
+  <transition name="fade">
+    <v-navigation-drawer v-if="$vuetify.display.mobile && !drawer" theme="dark">
+      <v-list key="1" class="titleBanner rounded-bl-lg">
+        <v-list-item title="Lore Hoard" subtitle="session notes">
+          <v-list-item-avatar end>
+            <v-img :src="require('../../assets/logo.jpg')" />
+          </v-list-item-avatar>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+  </transition>
 
   <div>
     <slot />
